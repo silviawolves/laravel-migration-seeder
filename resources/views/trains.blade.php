@@ -17,7 +17,13 @@
 
             @foreach ($trains as $train)
 
-                <li>{{ $train['azienda']}} - {{ $train['codice_treno']}}</li>
+                <li>{{ $train['azienda']}} - {{ $train['codice_treno']}} - 
+
+                @if ($train['data_di_partenza'] >= date('Y-m-d') )
+                    {{ $train['data_di_partenza'] }}
+                @endif
+                
+                </li>
                 
             @endforeach
 
